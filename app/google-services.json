@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "110181259500",
+    "project_id": "mobileprogramming-19aec",
+    "storage_bucket": "mobileprogramming-19aec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110181259500:android:4b72179a6e5bff43b56dc9",
+        "android_client_info": {
+          "package_name": "com.example.mobileprogramming"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5E_HJUrLpxLD4YSalC8fOt1XQbSUDFnM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

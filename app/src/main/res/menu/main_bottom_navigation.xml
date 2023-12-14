@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_notice"
+        android:icon="@drawable/ic_info_outline_black_24dp"
+        android:title="경기" />
+
+    <item
+        android:id="@+id/action_chat"
+        android:icon="@drawable/chatting"
+        android:title="채팅" />
+
+
+    <item
+        android:id="@+id/action_profile"
+        android:icon="@drawable/baseline_person_black_24"
+        android:title="My page" />
+
+</menu>
