@@ -56,8 +56,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         return mMessageList.size();
     }
 
-    public int getItemViewType(int position) {
-        Message message = mMessageList.get(position);
+    public int getItemViewType(int position) { //포지션 정의
+        Message message = mMessageList.get(position); //List get
         //메세지 작성자의 아이디와 앱 로그인 된 아이디와 같은 경우
         if (mUserId.equals(message.getWriterId())) { //내가 작성한 메세지의 경우
             return VIEWTYPE_MY;

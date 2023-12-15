@@ -39,7 +39,6 @@ public class JoinActivity extends AppCompatActivity {
         passwordEt = findViewById(R.id.password_et);
         passwordConfirmEt = findViewById(R.id.password_confirm_et); //비번 다시 입력
         joinBtn = findViewById(R.id.join_btn);
-        /*loginPb = findViewById(R.id.loading_pb);*/
         backIv = findViewById(R.id.back_iv); //back 버튼
 
         backIv.setOnClickListener(new View.OnClickListener() {
@@ -81,13 +80,11 @@ public class JoinActivity extends AppCompatActivity {
         });
     }
     public void login(String email, String password){
-        /*loginPb.setVisibility(View.VISIBLE);*/
         FirebaseAuth auth = FirebaseAuth.getInstance();
         auth.createUserWithEmailAndPassword(email,password) //회원가입 시도
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() { //회원가입 완료 리스너
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) { //핸들러
-                        /*loginPb.setVisibility(GONE);*/
                         if(task.isSuccessful()){ //완료 후 Login Activity 전환
                             Toast.makeText(JoinActivity.this,"회원가입이 완료되었습니다!", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(JoinActivity.this,LoginActivity.class);

@@ -18,7 +18,7 @@
             android:drawableStart="@drawable/ic_notifications1_black_24dp"
             android:drawableLeft="@drawable/ic_notifications1_black_24dp"
             android:padding="10dp"
-            android:text="공지사항"
+            android:text="경기결과"
             android:textColor="#ffffff"
             android:textStyle="bold" />
 
@@ -34,7 +34,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="8dp"
                 android:padding="3dp"
-                android:text="시츄 2018년생"
+                android:text=".vs"
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff" />
 
@@ -45,7 +45,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="8dp"
                 android:padding="3dp"
-                android:text="2019-11-24 공고종료"
+                android:text="내용"
                 android:textColor="#ffffff"
                 android:textColorHint="#ffffff" />
 

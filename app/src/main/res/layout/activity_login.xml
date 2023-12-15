@@ -149,38 +149,6 @@
                 app:layout_constraintWidth_percent=".8" />
 
 
-            <TextView
-                android:id="@+id/passwordforget_et"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="5dp"
-                android:text="비밀번호를 잊으셨나요?"
-                android:layout_marginBottom="12dp"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/password"
-                app:layout_constraintHorizontal_bias="1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/password"
-                app:layout_constraintVertical_bias="0" />
-
-            <TextView
-                android:id="@+id/or_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:textSize="18sp"
-                android:text="or 간편로그인"
-                android:layout_marginTop="10dp"
-
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:fontFamily="@font/kyobohandwriting"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/join_btn"
-                app:layout_constraintVertical_bias="0" />
-
             <ProgressBar
                 android:id="@+id/loading_pb"
                 style="?android:attr/progressBarStyle"
@@ -191,45 +159,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/naver_nav"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:backgroundTint="@color/white"
-                android:elevation="35dp"
-                android:src="@drawable/naverlogo"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/fab_google"
-                app:layout_constraintHorizontal_bias="1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/or_tv" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_google"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:elevation="35dp"
-                android:src="@drawable/googlelogin"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/or_tv" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/twitter_fb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:backgroundTint="@color/white"
-                android:elevation="35dp"
-                android:src="@drawable/twitterlogin"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/fab_google"
-                app:layout_constraintTop_toBottomOf="@+id/or_tv" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -47,13 +47,7 @@ public class LoginActivity extends AppCompatActivity {
     Button LoginBtn;
     Button JoinBtn;
 
-    /*ProgressBar loadingPb;*/
-
-    TextView ForgetPassword;
-
     float v = 0;
-
-    FloatingActionButton googlelogin, twitterlogin, naverlogin;
 
     FirebaseAuth auth = FirebaseAuth.getInstance();
 
@@ -67,47 +61,15 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUser user = auth.getCurrentUser();//인증된 정보를 저장하고 있다가 들어갈 때마다 로그인 안하게
         updateUI(user); //로그인이 되어있을때만
 
-        ForgetPassword = findViewById(R.id.passwordforget_et);
         emailEt = findViewById(R.id.email);
         passwordEt = findViewById(R.id.password);
 
         LoginBtn = findViewById(R.id.login_btn);
         JoinBtn = findViewById(R.id.join_btn);
 
-        googlelogin = findViewById(R.id.fab_google);
-        twitterlogin = findViewById(R.id.twitter_fb);
-        naverlogin = findViewById(R.id.naver_nav);
-
-        /*loadingPb = findViewById(R.id.loading_pb);*/
-
-        naverlogin.setTranslationY(300);
-        googlelogin.setTranslationY(300);
-        twitterlogin.setTranslationY(300);
-
-        naverlogin.setAlpha(v);
-        googlelogin.setAlpha(v);
-        twitterlogin.setAlpha(v);
-
-        naverlogin.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(400).start();
-        googlelogin.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(600).start();
-        twitterlogin.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(800).start();
-
-        // Configure Google Sign In 구글 로그인 통함
-        GoogleSignInOptions gso = new GoogleSignInOptions
-                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestEmail()
-                .build();
-
-        GoogleSignInClient client = GoogleSignIn.getClient(this, gso);
 
 
-        googlelogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = client.getSignInIntent();
-                startActivityForResult(intent, REQ_GOOGLE_SIGNIN);
-            }
-        });
+
 
         JoinBtn.setOnClickListener(new View.OnClickListener() { //회원가입
             @Override
@@ -134,14 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 //여기까지 예외처리
 
-                login(email, password); //밑 login 함수
-            }
-        });
-        ForgetPassword.setOnClickListener(new View.OnClickListener() { //비번찾기
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, FindActivity.class);
-                startActivity(intent);
+                login(email, password);
             }
         });
     }
@@ -149,7 +104,6 @@ public class LoginActivity extends AppCompatActivity {
 
 
     public void login(String email, String password) {
-        /*loadingPb.setVisibility(View.VISIBLE);*/
         auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -169,46 +123,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void updateUI(FirebaseUser user) { //로그인 되고 나서 다시 Activity 돌아가기
-        if (user != null) {//사용자 로그인이 null이 아닐때만, google로 로그인 만, 인증된 경우에만
+        if (user != null) {//사용자 로그인이 null이 아닐때만
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }
     }
 
-    private void firebaseAuthWithGoogle(String idToken) {
-        AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
-        auth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            FirebaseUser user = auth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            updateUI(null);
-                        }
 
-                        // ...
-                    }
-                });
-    }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQ_GOOGLE_SIGNIN) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                // Google Sign In was successful, authenticate with Firebase
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                firebaseAuthWithGoogle(account.getIdToken());
-            } catch (ApiException e) {
 
-            }
-        }
-    }
 
 }

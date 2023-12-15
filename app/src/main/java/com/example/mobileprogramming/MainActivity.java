@@ -8,13 +8,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager2 viewPager;
     private BottomNavigationView bottomNavigationView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +25,6 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.viewpager);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);  //하단 바 가져옴
 
-        // Adapter 에서 Fragment 객체를 계속 유지하려면 off screen page limit 도 조절해야 함.
-        /*viewPager.setOffscreenPageLimit(4);*/
         viewPager.setUserInputEnabled(false);
 
         MainPagerAdapter mainPagerAdapter = new MainPagerAdapter(this); //()안에는 생성자, 프래그먼트를 관리할 수 있게 manager을 넣어줌
