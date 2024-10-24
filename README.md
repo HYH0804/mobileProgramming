@@ -1,4 +1,4 @@
-자세한 설명은 아래 파일 참조
+자세한 설명은 아래 파일 참조(PPT)
 https://docs.google.com/presentation/d/1SwZVjPsf0Olv0hb9G10Z6kdDq3bYrTOL/edit?usp=sharing&ouid=106690920846806190932&rtpof=true&sd=true
 
 
